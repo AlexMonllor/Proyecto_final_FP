@@ -1,0 +1,19 @@
+# Python bytecode files
+__pycache__/
+*.pyc
+*.pyo
+
+#Entorno virtual
+mi_venv/
+
+# Modelos y archivos generados
+*.keras
+
+# Archivos temporales del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de logs
+*.log
+*.json
+*.csv
