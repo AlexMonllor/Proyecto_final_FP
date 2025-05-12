@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vistas para Métricas -->
+        <record model="ir.ui.view" id="ai_train_model.metricas_ga4_tree">
+            <field name="name">Métricas GA4 Lista</field>
+            <field name="model">ai_train_model.metricas_ga4</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="nombre_tecnico"/>
+                    <field name="categoria"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ai_train_model.metricas_ga4_form">
+            <field name="name">Métricas GA4 Formulario</field>
+            <field name="model">ai_train_model.metricas_ga4</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="nombre_tecnico"/>
+                            <field name="categoria"/>
+                            <field name="descripcion"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vistas para Dimensiones -->
+        <record model="ir.ui.view" id="ai_train_model.dimensiones_ga4_tree">
+            <field name="name">Dimensiones GA4 Lista</field>
+            <field name="model">ai_train_model.dimensiones_ga4</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="nombre_tecnico"/>
+                    <field name="categoria"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ai_train_model.dimensiones_ga4_form">
+            <field name="name">Dimensiones GA4 Formulario</field>
+            <field name="model">ai_train_model.dimensiones_ga4</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="nombre_tecnico"/>
+                            <field name="categoria"/>
+                            <field name="descripcion"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Acciones -->
+        <record model="ir.actions.act_window" id="ai_train_model.action_metricas">
+            <field name="name">Métricas de GA4</field>
+            <field name="res_model">ai_train_model.metricas_ga4</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="ai_train_model.action_dimensiones">
+            <field name="name">Dimensiones de GA4</field>
+            <field name="res_model">ai_train_model.dimensiones_ga4</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menús -->
+        <menuitem name="Configuración GA4" 
+                  id="ai_train_model.menu_config_ga4" 
+                  parent="ai_train_model.menu_root" 
+                  sequence="100"/>
+
+        <menuitem name="Métricas" 
+                  id="ai_train_model.menu_metricas" 
+                  parent="ai_train_model.menu_config_ga4" 
+                  action="ai_train_model.action_metricas"
+                  sequence="10"/>
+
+        <menuitem name="Dimensiones" 
+                  id="ai_train_model.menu_dimensiones" 
+                  parent="ai_train_model.menu_config_ga4" 
+                  action="ai_train_model.action_dimensiones"
+                  sequence="20"/>
+    </data>
+</odoo>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vista de árbol para descargas -->
+        <record model="ir.ui.view" id="ai_train_model.descarga_ga4_tree">
+            <field name="name">Descargas GA4 Lista</field>
+            <field name="model">ai_train_model.descarga_ga4</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="property_id"/>
+                    <field name="credencial_id"/>
+                    <field name="fecha_inicio"/>
+                    <field name="fecha_fin"/>
+                    <field name="estado_actual"/>
+                    <field name="progreso" widget="progressbar"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de formulario para descargas -->
+        <record model="ir.ui.view" id="ai_train_model.descarga_ga4_form">
+            <field name="name">Descargas GA4 Formulario</field>
+            <field name="model">ai_train_model.descarga_ga4</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_descargar_datos" 
+                                string="Descargar Datos" 
+                                type="object"
+                                class="oe_highlight"/>
+                        <button name="action_importar_csv"
+                                string="Importar CSV"
+                                type="object"
+                                class="btn-primary"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Ej: Descarga Mensual - Mayo 2023"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="credencial_id" options="{'no_create': True}"/>
+                                <field name="property_id" placeholder="Ej: 123456789"/>
+                                <field name="fecha_inicio"/>
+                                <field name="fecha_fin"/>
+                            </group>
+                            <group>
+                                <field name="estado_actual" readonly="1"/>
+                                <field name="progreso" widget="progressbar"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Resultados" invisible="not archivo_csv">
+                                <group>
+                                    <field name="archivo_csv" filename="nombre_archivo"/>
+                                    <field name="nombre_archivo" invisible="1"/>
+                                    <field name="estado_descarga" colspan="2"/>
+                                </group>
+                            </page>
+                            <page string="Métricas">
+                                <field name="metricas_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="nombre_tecnico"/>
+                                        <field name="categoria"/>
+                                        <field name="descripcion"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Dimensiones">
+                                <field name="dimensiones_ids">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="nombre_tecnico"/>
+                                        <field name="categoria"/>
+                                        <field name="descripcion"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Acción para abrir las vistas -->
+        <record model="ir.actions.act_window" id="ai_train_model.action_descargas">
+            <field name="name">Descargas de GA4</field>
+            <field name="res_model">ai_train_model.descarga_ga4</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Elemento de menú para descargas -->
+        <menuitem name="Descargas GA4" 
+                  id="ai_train_model.menu_descargas" 
+                  parent="ai_train_model.menu_root" 
+                  action="ai_train_model.action_descargas"
+                  sequence="20"/>
+    </data>
+</odoo>

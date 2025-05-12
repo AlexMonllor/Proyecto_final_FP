@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Métricas -->
+        <record id="metrica_conversions" model="ai_train_model.metricas_ga4">
+            <field name="name">Conversiones</field>
+            <field name="nombre_tecnico">conversions</field>
+            <field name="categoria">conversiones</field>
+            <field name="descripcion">Total de conversiones registradas</field>
+        </record>
+
+        <record id="metrica_transactions" model="ai_train_model.metricas_ga4">
+            <field name="name">Transacciones</field>
+            <field name="nombre_tecnico">transactions</field>
+            <field name="categoria">ecommerce</field>
+            <field name="descripcion">Número total de transacciones completadas</field>
+        </record>
+
+        <record id="metrica_revenue" model="ai_train_model.metricas_ga4">
+            <field name="name">Ingresos por compras</field>
+            <field name="nombre_tecnico">purchaseRevenue</field>
+            <field name="categoria">ecommerce</field>
+            <field name="descripcion">Ingresos totales por compras</field>
+        </record>
+
+        <record id="metrica_sessions" model="ai_train_model.metricas_ga4">
+            <field name="name">Sesiones</field>
+            <field name="nombre_tecnico">sessions</field>
+            <field name="categoria">engagement</field>
+            <field name="descripcion">Número total de sesiones</field>
+        </record>
+
+        <record id="metrica_users" model="ai_train_model.metricas_ga4">
+            <field name="name">Usuarios activos</field>
+            <field name="nombre_tecnico">activeUsers</field>
+            <field name="categoria">usuarios</field>
+            <field name="descripcion">Número de usuarios activos</field>
+        </record>
+
+        <!-- Dimensiones -->
+        <record id="dimension_date" model="ai_train_model.dimensiones_ga4">
+            <field name="name">Fecha</field>
+            <field name="nombre_tecnico">date</field>
+            <field name="categoria">otros</field>
+            <field name="descripcion">Fecha del evento</field>
+        </record>
+
+        <record id="dimension_source" model="ai_train_model.dimensiones_ga4">
+            <field name="name">Fuente de la sesión</field>
+            <field name="nombre_tecnico">sessionSource</field>
+            <field name="categoria">sesion</field>
+            <field name="descripcion">Origen de la sesión</field>
+        </record>
+
+        <record id="dimension_medium" model="ai_train_model.dimensiones_ga4">
+            <field name="name">Medio de la sesión</field>
+            <field name="nombre_tecnico">sessionMedium</field>
+            <field name="categoria">sesion</field>
+            <field name="descripcion">Medio por el que llegó la sesión</field>
+        </record>
+
+        <record id="dimension_device" model="ai_train_model.dimensiones_ga4">
+            <field name="name">Dispositivo</field>
+            <field name="nombre_tecnico">deviceCategory</field>
+            <field name="categoria">tecnologia</field>
+            <field name="descripcion">Categoría del dispositivo usado</field>
+        </record>
+
+        <record id="dimension_country" model="ai_train_model.dimensiones_ga4">
+            <field name="name">País</field>
+            <field name="nombre_tecnico">country</field>
+            <field name="categoria">geografico</field>
+            <field name="descripcion">País del usuario</field>
+        </record>
+    </data>
+</odoo>

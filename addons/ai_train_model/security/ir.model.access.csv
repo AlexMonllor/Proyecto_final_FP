@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ai_train_model_verificador_ga4,ai_train_model.verificador_ga4,model_ai_train_model_verificador_ga4,base.group_user,1,1,1,1
+access_ai_train_model_descarga_ga4,ai_train_model.descarga_ga4,model_ai_train_model_descarga_ga4,base.group_user,1,1,1,1
+access_ai_train_model_metricas_ga4,ai_train_model.metricas_ga4,model_ai_train_model_metricas_ga4,base.group_user,1,1,1,1
+access_ai_train_model_dimensiones_ga4,ai_train_model.dimensiones_ga4,model_ai_train_model_dimensiones_ga4,base.group_user,1,1,1,1
+access_ai_train_model_import_wizard,ai_train_model.import.wizard,model_ai_train_model_import_wizard,base.group_user,1,1,1,1
