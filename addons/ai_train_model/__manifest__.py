@@ -25,9 +25,23 @@ Long description of module's purpose
         'data/ga4_data.xml',
         'views/view_credential.xml',
         'views/view_download.xml',
+        'views/view_trainer.xml',
+        'views/menus.xml',
         'views/templates.xml',
         'wizards/import_wizard_view.xml',
     ],
+    
+    # Archivos de requisitos Python
+    'external_dependencies': {
+        'python': [
+            'pandas',
+            'numpy',
+            'scikit-learn',
+            'joblib',
+            'matplotlib',
+            'seaborn'
+        ],
+    },
     # only loaded in demonstration mode
 
 }

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Vista de árbol -->
+        <record model="ir.ui.view" id="ai_train_model.entrenador_tree">
+            <field name="name">Entrenador de Modelos Lista</field>
+            <field name="model">ai_train_model.entrenador</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="tipo_modelo"/>
+                    <field name="descarga_id"/>
+                    <field name="estado"/>
+                    <field name="progreso" widget="progressbar"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de formulario -->
+        <record model="ir.ui.view" id="ai_train_model.entrenador_form">
+            <field name="name">Entrenador de Modelos Formulario</field>
+            <field name="model">ai_train_model.entrenador</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                    <field name="estado" widget="statusbar" invisible="0"/>
+                    <button name="action_entrenar_modelo" 
+                            string="Entrenar Modelo" 
+                            type="object" 
+                            class="oe_highlight"
+                            invisible="estado != 'borrador'"/>
+                    <button name="action_descargar_modelo"
+                            string="Ver informe"
+                            type="object"
+                            class="oe_highlight"
+                            invisible="not modelos_generados"/>
+                </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Ej: Entrenamiento Mensual - Mayo 2025"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="tipo_modelo"/>
+                                <field name="descarga_id"/>
+                                <field name="directorio_modelos"/>
+                            </group>
+                            <group>
+                                <field name="progreso" widget="progressbar"/>
+                                <field name="estado_entrenamiento"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Resultados">
+                                <group invisible="estado != 'completado'">
+                                    <field name="modelos_generados" filename="nombre_archivo"/>
+                                    <field name="nombre_archivo" invisible="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Acción de ventana -->
+        <record model="ir.actions.act_window" id="ai_train_model.action_entrenador">
+            <field name="name">Entrenador de Modelos</field>
+            <field name="res_model">ai_train_model.entrenador</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

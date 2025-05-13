@@ -93,11 +93,5 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <!-- Elemento de menú para descargas -->
-        <menuitem name="Descargas GA4" 
-                  id="ai_train_model.menu_descargas" 
-                  parent="ai_train_model.menu_root" 
-                  action="ai_train_model.action_descargas"
-                  sequence="20"/>
     </data>
 </odoo>
