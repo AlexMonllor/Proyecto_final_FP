@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data>
-        <!-- Menú principal -->
+    <data>        <!-- Menú principal -->
         <menuitem name="Entrenamiento IA"
                     id="ai_train_model.menu_root"
                     web_icon="ai_train_model,static/description/icon.png"
+                    action="ai_train_model.action_window"
                     sequence="10"/>
 
         <!-- Submenús principales -->
