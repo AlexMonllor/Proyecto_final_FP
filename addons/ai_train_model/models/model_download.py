@@ -135,10 +135,10 @@ class DescargaGA4(models.Model):
                         'estado_actual': 'Completado',
                         'progreso': 100,
                         'estado_descarga': f"✓ Datos descargados exitosamente\n"
-                                         f"Total de registros: {len(datos)}\n"
-                                         f"Métricas: {', '.join(metricas)}\n"
-                                         f"Dimensiones: {', '.join(dimensiones)}\n"
-                                         f"Archivo: {nombre_archivo}"
+                                        f"Total de registros: {len(datos)}\n"
+                                        f"Métricas: {', '.join(metricas)}\n"
+                                        f"Dimensiones: {', '.join(dimensiones)}\n"
+                                        f"Archivo: {nombre_archivo}"
                     })
                 finally:
                     os.unlink(temp_csv_path)
@@ -245,10 +245,10 @@ class DescargaGA4(models.Model):
                         'estado_actual': 'Completado',
                         'progreso': 100,
                         'estado_descarga': f"✓ Datos descargados exitosamente\n"
-                                         f"Total de registros: {len(datos)}\n"
-                                         f"Métricas: {', '.join(metricas)}\n"
-                                         f"Dimensiones: {', '.join(dimensiones)}\n"
-                                         f"Archivo: {nombre_archivo}"
+                                        f"Total de registros: {len(datos)}\n"
+                                        f"Métricas: {', '.join(metricas)}\n"
+                                        f"Dimensiones: {', '.join(dimensiones)}\n"
+                                        f"Archivo: {nombre_archivo}"
                     })
                 finally:
                     os.unlink(temp_csv_path)

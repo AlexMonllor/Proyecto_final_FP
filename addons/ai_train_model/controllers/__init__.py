@@ -1,4 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import controllers
-from . import download_model
+from . import download_model_controller

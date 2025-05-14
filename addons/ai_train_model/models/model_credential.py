@@ -3,7 +3,7 @@
 import os
 import base64
 import tempfile
-from odoo import models, fields, api
+from odoo import models, fields
 from ..project.verificar_permisos_ga import verificar_credenciales, verificar_acceso_api, listar_cuentas_y_propiedades_disponibles
 
 
@@ -12,9 +12,9 @@ class VerificadorGA4(models.Model):
     _description = 'Verificador de Permisos de Google Analytics 4'
 
     name = fields.Char(string='Nombre de la verificación', required=True, 
-                      help='Identificador para esta verificación de credenciales')
+                        help='Identificador para esta verificación de credenciales')
     archivo_credenciales = fields.Binary(string='Archivo de credenciales', required=True,
-                                       help='Archivo JSON con las credenciales de GA4')
+                                        help='Archivo JSON con las credenciales de GA4')
     nombre_archivo = fields.Char(string='Nombre del archivo')
     estado_verificacion = fields.Text(string='Estado de la verificación', readonly=True,
                                     help='Resultado de la verificación de permisos y acceso')

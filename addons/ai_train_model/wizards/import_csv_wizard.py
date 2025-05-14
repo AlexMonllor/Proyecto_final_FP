@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields
 import base64
-import csv
 import io
 import pandas as pd
 import tempfile
